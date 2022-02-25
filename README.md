@@ -22,14 +22,36 @@
 - Создать в psql пустую БД и пользователя с правами **SUPERUSER** и с паролем
 - В файле [settings.py](./settings.py) заменить данные на корректные
 
+***Запуск***
+
 *Генерация файла*
 
 ```bash
-sudo pipenv run generate.py
+pipenv run python generate.py
 ```
 
 *Сохранение файла в бд*
 
-```bash
-sudo pipenv run upload.py
+Данный процесс необходимо выполнть с root-правами
+
+Для этого:
+
+1. Узнать расположение python для виртуального окружения
+
+   ```bash
+   pipenv --py
+   ```
+
+   выведется путь наподобие `/home/****/.local/share/virtualenvs/********/bin/python`, далее `path/to/python`  
+
+2. Выполнить
+   
+   ```bash
+   sudo path/to/python upload.py
+   ```
+
+Для проверки размера таблицы можно в терминале psql, зайдя в нужную бд, выполнить
+
+```
+SELECT pg_size_pretty(pg_total_relation_size('file_store'));
 ```
