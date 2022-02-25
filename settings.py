@@ -1,4 +1,5 @@
-DB_USER = "dbuser"
-DB_PASS = "******"
+DB_NAME = "my_db"
+DB_USER = "my_user"
+DB_PASS = "*******"
 DB_HOST = "localhost"
 DB_PORT = "5432"
