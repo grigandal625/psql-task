@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS file_store (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file_name VARCHAR(255) NOT NULL,
+    file_data BYTEA NOT NULL,
+);
